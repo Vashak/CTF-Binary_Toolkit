@@ -14,8 +14,6 @@ from pwn import *
 
 # Carichiamo il file per estrarre gli indirizzi statici
 elf = ELF('./primality_test')
-# Se hai la libc del server, caricala così (altrimenti usa quella locale per test)
-# libc = ELF('./libc.so.6') 
 
 r = remote(xxxxx)
 

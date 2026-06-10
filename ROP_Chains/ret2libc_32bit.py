@@ -1,3 +1,15 @@
+"""
+===========================================================================
+🎯 Objective: Interactive Shell via Libc Manipulation
+💣 Vulnerability: Unbounded Buffer Overflow + Missing PIE
+⚔️ Method:
+  1. Stage 1: Overwrites EIP to call puts@plt, leaking the real GOT address of puts to defeat ASLR.
+  2. Returns execution to main() to prevent the program from crashing.
+  3. Calculates the runtime base address of libc and the exact offset of system() and "/bin/sh".
+  4. Stage 2: Triggers the overflow again to execute system('/bin/sh').
+===========================================================================
+"""
+
 from pwn import *
 
 # Carichiamo il file per estrarre gli indirizzi statici

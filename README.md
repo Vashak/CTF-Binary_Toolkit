@@ -12,7 +12,7 @@ The toolkit covers a variety of attack vectors, from breaking classic algorithms
 Below is an index of the exploits available in this toolkit. Files are organized into specific directories based on their cryptographic domain.
 | Script | Category | Vulnerability | Description |
 | :--- | :--- | :--- | :--- |
-| `basic_bof_shell.py` | Buffer Overflow | Stack Buffer Overflow | Bypasses an initial input constraint to trigger an out-of-bounds read, injecting a cyclic pattern to hijack the instruction pointer and spawn a shell. |
+| `ret2win.py` | Buffer Overflow | Stack Buffer Overflow | Bypasses an initial input constraint to trigger an out-of-bounds read, injecting a cyclic pattern to hijack the instruction pointer and spawn a shell. |
 
 ---
 

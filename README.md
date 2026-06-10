@@ -17,6 +17,13 @@ Below is an index of the exploits available in this toolkit. Files are organized
 | **`canary_leak_64bit.py`** | Bypass Mitigations | Off-by-One / Overflow | Overwrites a Stack Canary's null terminator to force the server to leak the remaining 7 bytes, enabling subsequent overflow exploitation. |
 | **`fmtstr_got_overwrite.py`** | Format String | Unsafe `printf` | Leverages a format string vulnerability to overwrite `strlen@got` with `system@plt`, hijacking execution flow to spawn a shell. |
 | `binary_oracle_bruteforcer.py` | Reverse Engineering | Validation Oracle | Automates local binary execution via `subprocess` to perform a character-by-character brute-force attack, exploiting an early-termination string oracle. |
+
+
+
+
+
+
+
 ---
 
 ## ⚠️ Disclaimer

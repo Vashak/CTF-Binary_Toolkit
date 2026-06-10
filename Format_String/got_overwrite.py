@@ -11,8 +11,6 @@
 
 from pwn import *
 
-# 1. Impostiamo il contesto leggendo il file locale
-# Sostituisci 'nome_del_file_scaricato' con il nome reale dell'eseguibile della CTF
 exe = ELF('./tictactoe')
 context.binary = exe 
 

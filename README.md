@@ -13,6 +13,7 @@ Below is an index of the exploits available in this toolkit. Files are organized
 | Script | Category | Vulnerability | Description |
 | :--- | :--- | :--- | :--- |
 | `ret2win.py` | Buffer Overflow | Stack Buffer Overflow | Bypasses an initial input constraint to trigger an out-of-bounds read, injecting a cyclic pattern to hijack the instruction pointer and spawn a shell. |
+| `ret2libc_32bit.py` | ROP Chains | Stack Buffer Overflow | Performs a 2-stage Return-to-Libc attack (32-bit). Leaks GOT to defeat ASLR, calculates libc base, and redirects execution to `system('/bin/sh')`. |
 
 ---
 

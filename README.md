@@ -2,8 +2,7 @@
 
 This repository contains my personal collection of Python exploits and scripts developed to solve Cryptography and Hardware challenges during Capture The Flag (CTF) competitions.
 
-The toolkit covers both PWN and Reverse Engineering (Rev) type of exploits
-
+The toolkit covers diverse offensive techniques, ranging from memory corruption and Return-Oriented Programming (ROP) to automated binary analysis and dynamic mitigation bypass.
 > **🌟 Highlight:** Looking for something more advanced? Check out my standalone exploits: [https://github.com/Vashak/ChaCha20-Linear-Exploit]
 [https://github.com/Vashak/Triwizard-Maze-Exploit]
 

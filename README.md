@@ -1,4 +1,4 @@
-# 🗡️ CTF-Binary_Toolkit
+# ​🏹 CTF-Binary_Toolkit
 
 This repository contains my personal collection of Python exploits and scripts developed to solve Cryptography and Hardware challenges during Capture The Flag (CTF) competitions.
 

@@ -18,12 +18,6 @@ Below is an index of the exploits available in this toolkit. Files are organized
 | **`fmtstr_got_overwrite.py`** | Format String | Unsafe `printf` | Leverages a format string vulnerability to overwrite `strlen@got` with `system@plt`, hijacking execution flow to spawn a shell. |
 | `binary_oracle_bruteforcer.py` | Reverse Engineering | Validation Oracle | Automates local binary execution via `subprocess` to perform a character-by-character brute-force attack, exploiting an early-termination string oracle. |
 
-
-
-
-
-
-
 ---
 
 ## ⚠️ Disclaimer
